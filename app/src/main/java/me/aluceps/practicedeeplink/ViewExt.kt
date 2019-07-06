@@ -13,17 +13,17 @@ fun TextView.setLaunchFrom(value: LaunchBy?) {
 
 @BindingAdapter("text_scheme")
 fun TextView.setScheme(value: Uri?) {
-    value?.scheme?.let { text = it }
+    text = value?.scheme ?: "N/A"
 }
 
 @BindingAdapter("text_host")
 fun TextView.setHost(value: Uri?) {
-    value?.host?.let { text = it }
+    text = value?.host ?: "N/A"
 }
 
 @BindingAdapter("text_path")
 fun TextView.setPath(value: Uri?) {
-    value?.path?.let { text = it }
+    text = value?.path ?: "N/A"
 }
 
 @BindingAdapter("text_datetime")
