@@ -4,24 +4,112 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="me.aluceps.practicedeeplink.MainViewModel"
+            />
+    </data>
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        tools:context=".MainActivity"
         >
 
         <TextView
-            android:id="@+id/viewer"
-            style="@style/TextAppearance.AppCompat.Caption"
-            android:layout_width="0dp"
+            android:id="@+id/label_action"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:text="Action"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Hello World!"
             />
 
+        <TextView
+            android:id="@+id/text_action"
+            style="@style/TextAppearance.AppCompat.Display1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_action"
+            app:text_from="@{viewModel.from}"
+            tools:text="ON_CREATE"
+            />
+
+        <TextView
+            android:id="@+id/label_scheme"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scheme"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_action"
+            />
+
+        <TextView
+            android:id="@+id/text_scheme"
+            style="@style/TextAppearance.AppCompat.Display1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_scheme"
+            app:text_scheme="@{viewModel.uri}"
+            tools:text="http"
+            />
+
+        <TextView
+            android:id="@+id/label_host"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Host"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_scheme"
+            />
+
+        <TextView
+            android:id="@+id/text_host"
+            style="@style/TextAppearance.AppCompat.Display1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_host"
+            app:text_host="@{viewModel.uri}"
+            tools:text="hoge.com"
+            />
+
+        <TextView
+            android:id="@+id/label_path"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Path"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_host"
+            />
+
+        <TextView
+            android:id="@+id/text_path"
+            style="@style/TextAppearance.AppCompat.Display1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_path"
+            app:text_path="@{viewModel.uri}"
+            tools:text="index.html"
+            />
     </android.support.constraint.ConstraintLayout>
 </layout>
