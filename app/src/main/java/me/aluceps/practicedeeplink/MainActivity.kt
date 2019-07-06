@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import me.aluceps.practicedeeplink.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.apply {
             this.from = from
             this.uri = uri
+            this.datetime = Date()
         }
     }
 }
